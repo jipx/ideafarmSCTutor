@@ -25,13 +25,13 @@ model_choice = st.sidebar.selectbox(
     key="model_selector_admin"
 )
 
-model_id_map = dict(
-    Claude_3_5_Sonnet="anthropic.claude-3-sonnet-20240620-v1:0",
-    Claude_v2="anthropic.claude-v2",
-    DeepSeek_V2_Chat="deepseek.chat"
-)
+model_id_map = {
+    "Claude 3.5 Sonnet": "anthropic.claude-3-sonnet-20240620-v1:0",
+    "Claude v2": "anthropic.claude-v2",
+    "DeepSeek-V2 Chat": "deepseek.chat"
+}
 
-selected_model_id = model_id_map[model_choice.replace('.', '').replace(' ', '_')]
+selected_model_id = model_id_map[model_choice]
 st.markdown(f"Model selected: **{model_choice}** (`{selected_model_id}`)")
 
 # === Log Viewer ===
